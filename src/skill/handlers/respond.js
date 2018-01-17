@@ -6,30 +6,24 @@ var dynamo = require('./dynamoDB')
 module.exports = {
 
   readSceneWithCard: function ( scene, session, response ) {
-    var json = buildResponse( scene )
-    dynamo.putUserState( session, function ( data ) {
-      console.log( data.message )
-      response.askWithCard(
-        json.speechOutput,
-        json.repromptOutput,
-        json.cardTitle,
-        json.cardOutput,
-        json.cardImage
-      )
-    })
+    var json = buildResponse( scene );
+    response.askWithCard(
+      json.speechOutput,
+      json.repromptOutput,
+      json.cardTitle,
+      json.cardOutput,
+      json.cardImage
+    );
   },
 
   exitWithCard: function ( scene, session, response ) {
-    var json = buildResponse( scene )
-    dynamo.putUserState( session, function ( data ) {
-      console.log( data.message )
-      response.tellWithCard(
-        json.speechOutput,
-        json.cardTitle,
-        json.cardOutput,
-        json.cardImage
-      )
-    })
+    var json = buildResponse( scene );
+    response.tellWithCard(
+      json.speechOutput,
+      json.cardTitle,
+      json.cardOutput,
+      json.cardImage
+    );
   }
 
 }

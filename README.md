@@ -91,7 +91,7 @@ The smaller bubbles above each node represents the utterance, a phrase the user 
 In the sample skill, an example interaction with Alexa might be:
 
 ```
-User:  Alexa, launch My Alexa Skill.
+User:  Alexa, launch My Skill.
 Alexa:  Welcome to my Alexa Skill.  To learn how to use this skill, say "Help".  When you are ready, say "Begin".
 User:  Begin
 Alexa:  You enter a room with three doors, each with a distinct number on it. Which door would you like to open?
